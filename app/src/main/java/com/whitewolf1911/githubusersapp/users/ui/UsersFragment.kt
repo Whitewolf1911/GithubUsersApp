@@ -1,5 +1,7 @@
 package com.whitewolf1911.githubusersapp.users.ui
 
+import android.os.Bundle
+import android.view.View
 import com.whitewolf1911.githubusersapp.R
 import com.whitewolf1911.githubusersapp.core.fragment.BaseFragment
 import com.whitewolf1911.githubusersapp.core.fragment.FragmentConfiguration
@@ -15,4 +17,18 @@ class UsersFragment : BaseFragment(R.layout.fragment_users) {
 
     private val binding by viewBinding(FragmentUsersBinding::bind)
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initUi()
+    }
+
+    private fun initUi() {
+        binding.addNewUserButton.setOnClickListener {
+            navToAddNewUserFragment()
+        }
+    }
+
+    private fun navToAddNewUserFragment() {
+        nav(UsersFragmentDirections.actionUsersFragmentToAddNewUserFragment())
+    }
 }

@@ -4,5 +4,16 @@
     <string name="users">Users</string>
     <string name="add_new_user">Add New User</string>
     <string name="sort_users">Sort Users</string>
+    <string name="please_enter_location">Please Enter Location</string>
+    <string name="name">Name</string>
+    <string name="please_enter_name">Please enter name</string>
+    <string name="position">Position</string>
+    <string name="please_enter_position">Please enter position</string>
+    <string name="age">Age</string>
+    <string name="please_enter_age">Please enter age</string>
+    <string name="save">Save</string>
+    <string name="github_username">Github Username</string>
+    <string name="please_enter_github_username">Please enter Github username</string>
+    <string name="new_user">New User</string>
 
 </resources>

@@ -9,6 +9,17 @@
         android:id="@+id/usersFragment"
         android:name="com.whitewolf1911.githubusersapp.users.ui.UsersFragment"
         android:label="UsersFragment"
-        tools:layout="@layout/fragment_users" />
+        tools:layout="@layout/fragment_users" >
+        <action
+            android:id="@+id/action_usersFragment_to_addNewUserFragment"
+            app:destination="@id/addNewUserFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addNewUserFragment"
+        android:name="com.whitewolf1911.githubusersapp.addnewuser.ui.AddNewUserFragment"
+        android:label="AddNewUserFragment"
+        tools:layout="@layout/fragment_add_new_user"
+        />
 
 </navigation>
