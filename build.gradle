@@ -46,7 +46,7 @@ buildscript {
         safeargs_gradle_version = '2.4.2'
         dagger_gradle_version = '2.40.1'
         gradle_version = '7.2.1'
-        kotlin_version = '1.6.10'
+        kotlin_version = '1.7.10'
     }
 
     repositories {
