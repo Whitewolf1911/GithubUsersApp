@@ -1,3 +1,8 @@
 <resources>
+
     <string name="app_name">GithubUsersApp</string>
+    <string name="users">Users</string>
+    <string name="add_new_user">Add New User</string>
+    <string name="sort_users">Sort Users</string>
+
 </resources>
