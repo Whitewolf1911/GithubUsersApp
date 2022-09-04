@@ -66,8 +66,7 @@ dependencies {
     implementation "com.google.dagger:hilt-android:$dagger_gradle_version"
     kapt "com.google.dagger:hilt-android-compiler:$dagger_gradle_version"
 
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:${libVersions.daggerViewModel}"
-    kapt "androidx.hilt:hilt-compiler:${libVersions.daggerViewModel}"
+    kapt "androidx.hilt:hilt-compiler:1.0.0"
 
     implementation "com.github.bumptech.glide:glide:${libVersions.glide}"
     kapt "com.github.bumptech.glide:compiler:${libVersions.glide}"
