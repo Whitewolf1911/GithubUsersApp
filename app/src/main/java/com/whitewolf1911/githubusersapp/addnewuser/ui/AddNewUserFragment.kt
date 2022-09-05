@@ -3,8 +3,11 @@ package com.whitewolf1911.githubusersapp.addnewuser.ui
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.whitewolf1911.githubusersapp.R
 import com.whitewolf1911.githubusersapp.core.fragment.BaseFragment
 import com.whitewolf1911.githubusersapp.core.fragment.FragmentConfiguration
@@ -12,9 +15,12 @@ import com.whitewolf1911.githubusersapp.core.fragment.ToolbarConfiguration
 import com.whitewolf1911.githubusersapp.databinding.FragmentAddNewUserBinding
 import com.whitewolf1911.githubusersapp.utils.lifecycle.observe
 import com.whitewolf1911.githubusersapp.utils.viewbinding.viewBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class AddNewUserFragment : BaseFragment(R.layout.fragment_add_new_user) {
 
     private val toolbarConfiguration: ToolbarConfiguration = ToolbarConfiguration(R.string.new_user)
@@ -35,7 +41,17 @@ class AddNewUserFragment : BaseFragment(R.layout.fragment_add_new_user) {
         override fun afterTextChanged(s: Editable?) = Unit
     }
 
-    private val isInsertSuccessfulFlowCollector = FlowCollector<Boolean?> {}
+    private val isInsertSuccessfulFlowCollector = FlowCollector<Boolean> { isInsertSuccess ->
+
+        if (isInsertSuccess) {
+            Toast.makeText(context, "Success", Toast.LENGTH_LONG).show()
+            Log.d("tagg", "emitting working")
+        } else {
+            Toast.makeText(context, "FAIL", Toast.LENGTH_LONG).show()
+            Log.d("tagg", "emitting working")
+        }
+
+    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -115,7 +131,9 @@ class AddNewUserFragment : BaseFragment(R.layout.fragment_add_new_user) {
 
     private fun initObservers() {
         viewLifecycleOwner.observe {
-            addNewUserViewModel.isInsertSuccessfulFlow.collectLatest { isInsertSuccessfulFlowCollector }
+            addNewUserViewModel.isInsertSuccessfulFlow.collectLatest {
+                isInsertSuccessfulFlowCollector
+            }
         }
     }
 }

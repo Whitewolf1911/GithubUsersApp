@@ -1,5 +1,6 @@
 package com.whitewolf1911.githubusersapp.addnewuser.ui
 
+import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.whitewolf1911.githubusersapp.addnewuser.domain.usecase.NewUserUseCase
 import com.whitewolf1911.githubusersapp.core.BaseViewModel
@@ -20,19 +21,20 @@ class AddNewUserViewModel @Inject constructor(
     val isInsertSuccessfulFlow: StateFlow<Boolean?>
         get() = _isInsertSuccessfulFlow
 
-
     fun insertUser(
         name: String,
         position: String,
         age: Int,
         githubUsername: String
     ) {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch {
             if (newUserUseCase.checkUserExists(githubUsername)) {
                 _isInsertSuccessfulFlow.emit(false)
+                Log.d("tagg","emit false")
             } else {
                 newUserUseCase.insertUser(name = name, position = position, age = age, githubUsername = githubUsername)
                 _isInsertSuccessfulFlow.emit(true)
+                Log.d("tagg","emit true")
             }
         }
     }
