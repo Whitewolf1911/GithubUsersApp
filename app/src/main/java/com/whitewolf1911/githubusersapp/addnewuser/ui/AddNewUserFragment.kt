@@ -41,16 +41,14 @@ class AddNewUserFragment : BaseFragment(R.layout.fragment_add_new_user) {
         override fun afterTextChanged(s: Editable?) = Unit
     }
 
-    private val isInsertSuccessfulFlowCollector = FlowCollector<Boolean> { isInsertSuccess ->
-
-        if (isInsertSuccess) {
-            Toast.makeText(context, "Success", Toast.LENGTH_LONG).show()
-            Log.d("tagg", "emitting working")
-        } else {
-            Toast.makeText(context, "FAIL", Toast.LENGTH_LONG).show()
-            Log.d("tagg", "emitting working")
+    private val isInsertSuccessfulFlowCollector = FlowCollector<Boolean?> { isInsertSuccess ->
+        isInsertSuccess?.let {
+            if (isInsertSuccess) {
+                Toast.makeText(context, R.string.user_added, Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(context, R.string.user_add_fail, Toast.LENGTH_LONG).show()
+            }
         }
-
     }
 
 
@@ -131,9 +129,7 @@ class AddNewUserFragment : BaseFragment(R.layout.fragment_add_new_user) {
 
     private fun initObservers() {
         viewLifecycleOwner.observe {
-            addNewUserViewModel.isInsertSuccessfulFlow.collectLatest {
-                isInsertSuccessfulFlowCollector
-            }
+            addNewUserViewModel.isInsertSuccessfulFlow.collect(isInsertSuccessfulFlowCollector)
         }
     }
 }

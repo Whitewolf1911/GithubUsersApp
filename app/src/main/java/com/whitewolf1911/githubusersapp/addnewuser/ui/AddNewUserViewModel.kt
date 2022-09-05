@@ -30,11 +30,9 @@ class AddNewUserViewModel @Inject constructor(
         viewModelScope.launch {
             if (newUserUseCase.checkUserExists(githubUsername)) {
                 _isInsertSuccessfulFlow.emit(false)
-                Log.d("tagg","emit false")
             } else {
                 newUserUseCase.insertUser(name = name, position = position, age = age, githubUsername = githubUsername)
                 _isInsertSuccessfulFlow.emit(true)
-                Log.d("tagg","emit true")
             }
         }
     }
