@@ -23,10 +23,13 @@ class UserRepositoryImpl(
     }
 
     override suspend fun insertUser(userDTO: UserDTO) {
-        TODO("Not yet implemented")
+        withContext(Dispatchers.IO) {
+            userDao.insertUser(userDTOMapper.mapToUserEntity(userDTO))
+        }
     }
 
-    override suspend fun checkUserExist(githubUsername: String): Boolean {
-        TODO("Not yet implemented")
-    }
+    override suspend fun checkUserExist(githubUsername: String): Boolean =
+        withContext(Dispatchers.IO) {
+            userDao.checkUserExists(githubUsername)
+        }
 }

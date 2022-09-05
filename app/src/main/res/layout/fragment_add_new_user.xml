@@ -29,7 +29,7 @@
             android:hint="@string/please_enter_name">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etName"
+                android:id="@+id/nameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:nextFocusDown="@id/etAge" />
+                android:nextFocusDown="@id/ageEditText" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -79,11 +79,11 @@
             android:hint="@string/please_enter_age">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etAge"
+                android:id="@+id/ageEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:nextFocusDown="@id/etGithub" />
+                android:nextFocusDown="@id/githubEditText" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -103,7 +103,7 @@
             android:hint="@string/please_enter_github_username">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etGithub"
+                android:id="@+id/githubEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionDone"
@@ -116,6 +116,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cornerRadius="@dimen/round_button_radius"
+            android:enabled="false"
             android:layout_gravity="center"
             android:layout_marginTop="56dp"
             android:paddingHorizontal="@dimen/spacing_large"
