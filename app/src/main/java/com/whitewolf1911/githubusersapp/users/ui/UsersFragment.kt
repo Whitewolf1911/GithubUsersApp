@@ -34,7 +34,7 @@ class UsersFragment : BaseFragment(R.layout.fragment_users) {
 
     private val userAdapterListener = object : UsersAdapter.UserAdapterListener {
         override fun onUserClick(userListItem: UserListItem) {
-            TODO("IMPLEMENT USER DETAILS PAGE")
+            navToUserDetailsFragment(userListItem)
         }
     }
 
@@ -51,6 +51,7 @@ class UsersFragment : BaseFragment(R.layout.fragment_users) {
     }
 
     private fun initUi() {
+
         with(binding) {
             addNewUserButton.setOnClickListener {
                 navToAddNewUserFragment()
@@ -70,5 +71,9 @@ class UsersFragment : BaseFragment(R.layout.fragment_users) {
 
     private fun navToAddNewUserFragment() {
         nav(UsersFragmentDirections.actionUsersFragmentToAddNewUserFragment())
+    }
+
+    private fun navToUserDetailsFragment(userListItem: UserListItem) {
+        nav(UsersFragmentDirections.actionUsersFragmentToUserDetailsFragment(userListItem))
     }
 }

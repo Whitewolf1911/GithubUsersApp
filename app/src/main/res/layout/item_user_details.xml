@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/green_500">
+
+    <TextView
+        android:id="@+id/followersTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintStart_toEndOf="@+id/followersText"
+        app:layout_constraintTop_toBottomOf="@+id/publicReposTextView"
+        tools:text="24" />
+
+    <TextView
+        android:id="@+id/followersText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_small"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:text="@string/followers"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintStart_toEndOf="@+id/avatarImageView"
+        app:layout_constraintTop_toBottomOf="@+id/publicReposText"
+        tools:text="Followers:" />
+
+    <TextView
+        android:id="@+id/followingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintStart_toEndOf="@+id/followingText"
+        app:layout_constraintTop_toBottomOf="@+id/followersTextView"
+        tools:text="30" />
+
+    <TextView
+        android:id="@+id/followingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_small"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:text="@string/following"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintStart_toEndOf="@+id/avatarImageView"
+        app:layout_constraintTop_toBottomOf="@+id/followersText"
+        tools:text="Following:" />
+
+    <TextView
+        android:id="@+id/publicReposTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_small"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintStart_toEndOf="@+id/publicReposText"
+        app:layout_constraintTop_toBottomOf="@+id/nameText"
+        tools:text="20" />
+
+    <TextView
+        android:id="@+id/publicReposText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_small"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintStart_toEndOf="@+id/avatarImageView"
+        app:layout_constraintTop_toBottomOf="@+id/nameTextView"
+        tools:text="Public Repositories:" />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_small"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintStart_toEndOf="@+id/avatarImageView"
+        app:layout_constraintTop_toTopOf="@+id/avatarImageView"
+        tools:text="Name:" />
+
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_small"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintStart_toEndOf="@+id/nameTextView"
+        app:layout_constraintTop_toTopOf="@+id/nameTextView"
+        tools:text="Michael Jordan" />
+
+    <ImageView
+        android:id="@+id/avatarImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_small"
+        android:layout_marginTop="@dimen/spacing_small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

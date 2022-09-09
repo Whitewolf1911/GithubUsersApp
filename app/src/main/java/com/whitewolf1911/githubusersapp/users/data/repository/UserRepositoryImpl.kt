@@ -1,8 +1,5 @@
 package com.whitewolf1911.githubusersapp.users.data.repository
 
-import com.whitewolf1911.githubusersapp.userdetails.data.model.UserDetailsResponse
-import com.whitewolf1911.githubusersapp.userdetails.data.model.UserReposResponse
-import com.whitewolf1911.githubusersapp.userdetails.data.model.UserReposResponseItem
 import com.whitewolf1911.githubusersapp.userdetails.data.remote.RetrofitInstance
 import com.whitewolf1911.githubusersapp.userdetails.domain.mapper.UserDetailsMapper
 import com.whitewolf1911.githubusersapp.userdetails.domain.mapper.UserReposMapper
@@ -44,7 +41,7 @@ class UserRepositoryImpl(
             userDao.checkUserExists(githubUsername)
         }
 
-    override suspend fun getUserRepositories(userName: String): Flow<List<UserRepositoryItem>> {
+    override suspend fun getUserRepositories(userName: String): List<UserRepositoryItem> {
         val userRepositories = mutableListOf<UserRepositoryItem>()
         withContext(Dispatchers.IO) {
             val response = RetrofitInstance.api.getUserRepositories(userName)
@@ -54,7 +51,7 @@ class UserRepositoryImpl(
                 }
             }
         }
-        return flowOf(userRepositories)
+        return userRepositories
     }
 
     override suspend fun getUserDetails(userName: String): Flow<UserDetails> {

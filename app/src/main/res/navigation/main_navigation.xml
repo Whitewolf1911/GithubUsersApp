@@ -13,6 +13,10 @@
         <action
             android:id="@+id/action_usersFragment_to_addNewUserFragment"
             app:destination="@id/addNewUserFragment" />
+        <action
+            android:id="@+id/action_usersFragment_to_userDetailsFragment"
+            app:destination="@id/userDetailsFragment"
+            />
     </fragment>
 
     <fragment
@@ -21,5 +25,13 @@
         android:label="AddNewUserFragment"
         tools:layout="@layout/fragment_add_new_user"
         />
+    <fragment
+        android:id="@+id/userDetailsFragment"
+        android:name="com.whitewolf1911.githubusersapp.userdetails.ui.UserDetailsFragment"
+        android:label="UserDetailsFragment" >
+        <argument
+            android:name="userListItem"
+            app:argType="com.whitewolf1911.githubusersapp.users.ui.model.UserListItem" />
+    </fragment>
 
 </navigation>

@@ -17,5 +17,10 @@
     <string name="new_user">New User</string>
     <string name="user_added">New User Added</string>
     <string name="user_add_fail">This User Already Exists</string>
-
+    <string name="user_details">User Details</string>
+    <string name="followers">Followers :</string>
+    <string name="following">Following :</string>
+    <string name="repositories">Repositories</string>
+    <string name="public_repositories">Public Repositories</string>
+    <string name="name_with_semicolon">Name:</string>
 </resources>

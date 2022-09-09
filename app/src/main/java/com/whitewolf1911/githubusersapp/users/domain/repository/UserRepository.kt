@@ -15,7 +15,7 @@ interface UserRepository {
 
     suspend fun checkUserExist(githubUsername: String): Boolean
 
-    suspend fun getUserRepositories(userName: String): Flow<List<UserRepositoryItem>>
+    suspend fun getUserRepositories(userName: String): List<UserRepositoryItem>
 
     suspend fun getUserDetails(userName: String): Flow<UserDetails>
 

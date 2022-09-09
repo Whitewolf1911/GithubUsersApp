@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/spacing_small"
+    android:background="@color/material_dynamic_neutral_variant90"
+    android:padding="@dimen/spacing_small">
+
+    <TextView
+        android:id="@+id/repoNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Repo Name 1" />
+
+    <TextView
+        android:id="@+id/repoLanguageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/green_500"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/repoNameTextView"
+        tools:text="Kotlin" />
+
+    <TextView
+        android:id="@+id/createDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/purple_500"
+        android:layout_marginTop="@dimen/spacing_xxsmall"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/starLogoImageView"
+        tools:text="13.05.2022" />
+
+    <TextView
+        android:id="@+id/repoStarsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/starLogoImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="23" />
+
+    <ImageView
+        android:id="@+id/starLogoImageView"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_green_star_foreground"
+        app:layout_constraintEnd_toStartOf="@+id/repoStarsTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

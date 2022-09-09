@@ -16,7 +16,7 @@ class UserDetailsUseCase @Inject constructor(
         return userRepository.getUserDetails(githubUsername)
     }
 
-    suspend fun getUserRepositories(githubUsername: String): Flow<List<UserRepositoryItem>> {
+    suspend fun getUserRepositories(githubUsername: String): List<UserRepositoryItem> {
         return userRepository.getUserRepositories(githubUsername)
     }
 }
