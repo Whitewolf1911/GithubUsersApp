@@ -19,6 +19,8 @@ Architecture -> Domain Driven Architecture (Data-Domain-UI) - MVVM
 
 -Coroutines
 
+-Observer/Flow pattern
+
 -Room database
 
 -ViewBinding
