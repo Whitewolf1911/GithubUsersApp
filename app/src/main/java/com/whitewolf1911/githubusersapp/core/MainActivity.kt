@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
         navController =
             (supportFragmentManager.findFragmentById(binding.navigationHostFragment.id) as NavHostFragment).navController
     }

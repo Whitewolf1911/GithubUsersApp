@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
+import com.whitewolf1911.githubusersapp.R
 import com.whitewolf1911.githubusersapp.core.fragment.ToolbarConfiguration
 import com.whitewolf1911.githubusersapp.databinding.CustomToolbarBinding
 import com.whitewolf1911.githubusersapp.utils.viewbinding.viewBinding
@@ -24,6 +25,7 @@ class CustomToolbar @JvmOverloads constructor(
             initTitle(titleResId)
             configureStartButton(startIconResId, startIconClick)
         }
+        initBackgroundColor(R.color.green_500)
         isVisible = true
     }
 
@@ -50,6 +52,12 @@ class CustomToolbar @JvmOverloads constructor(
             setImageResource(resId)
             setOnClickListener { clickAction?.invoke() }
             isVisible = true
+        }
+    }
+
+    private fun initBackgroundColor(resId: Int?) {
+        resId?.let {
+            binding.root.setBackgroundResource(resId)
         }
     }
 }

@@ -60,7 +60,7 @@
         android:layout_marginTop="@dimen/spacing_small"
         android:textSize="@dimen/text_size_small"
         app:layout_constraintStart_toEndOf="@+id/publicReposText"
-        app:layout_constraintTop_toBottomOf="@+id/nameText"
+        app:layout_constraintTop_toBottomOf="@+id/nameTextView"
         tools:text="20" />
 
     <TextView
@@ -71,8 +71,19 @@
         android:layout_marginTop="@dimen/spacing_small"
         android:textSize="@dimen/text_size_small"
         app:layout_constraintStart_toEndOf="@+id/avatarImageView"
-        app:layout_constraintTop_toBottomOf="@+id/nameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/nameText"
         tools:text="Public Repositories:" />
+
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_small"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:text="@string/name_with_semicolon"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintStart_toEndOf="@+id/avatarImageView"
+        app:layout_constraintTop_toTopOf="@+id/avatarImageView" />
 
     <TextView
         android:id="@+id/nameTextView"
@@ -80,18 +91,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/spacing_small"
         android:textSize="@dimen/text_size_small"
-        app:layout_constraintStart_toEndOf="@+id/avatarImageView"
-        app:layout_constraintTop_toTopOf="@+id/avatarImageView"
-        tools:text="Name:" />
-
-    <TextView
-        android:id="@+id/nameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/spacing_small"
-        android:textSize="@dimen/text_size_small"
-        app:layout_constraintStart_toEndOf="@+id/nameTextView"
-        app:layout_constraintTop_toTopOf="@+id/nameTextView"
+        app:layout_constraintStart_toEndOf="@id/nameText"
+        app:layout_constraintTop_toTopOf="@id/nameText"
         tools:text="Michael Jordan" />
 
     <ImageView

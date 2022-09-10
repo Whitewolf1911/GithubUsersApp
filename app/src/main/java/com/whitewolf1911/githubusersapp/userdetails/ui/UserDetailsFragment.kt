@@ -7,6 +7,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.bumptech.glide.Glide
 import com.whitewolf1911.githubusersapp.R
 import com.whitewolf1911.githubusersapp.core.fragment.BaseFragment
 import com.whitewolf1911.githubusersapp.core.fragment.FragmentConfiguration
@@ -48,22 +49,17 @@ class UserDetailsFragment : BaseFragment(R.layout.fragment_user_detail) {
         initUI()
         initObservers()
         lifecycleScope.launch {
-            initUserRepositoriesPreview(userDetailsViewModel.getUserRepositories())
         }
     }
 
     private fun initUI() {
         binding.userReposRecyclerView.adapter = userDetailsAdapter
-
+        getToolbar()?.setTitle(userDetailsViewModel.getUserName())
     }
 
     private fun initUserRepositoriesPreview(userRepositoriesPreview: UserRepositoriesPreview) {
-        Log.d("tagg", userRepositoriesPreview.toString())
         userDetailsAdapter.submitList(userRepositoriesPreview.userRepositoryItems.toMutableList())
-
-        Log.d("tagg", userDetailsAdapter.itemCount.toString())
         userDetailsAdapter.notifyDataSetChanged()
-
     }
 
     private fun initUserDetailPreview(userDetailsPreview: UserDetailsPreview) {
@@ -72,6 +68,9 @@ class UserDetailsFragment : BaseFragment(R.layout.fragment_user_detail) {
             followersTextView.text = userDetailsPreview.followers
             followingTextView.text = userDetailsPreview.following
             publicReposTextView.text = userDetailsPreview.public_repos
+            context?.let {
+                Glide.with(it).load(userDetailsPreview.avatar_url).into(avatarImageView)
+            }
         }
     }
 
@@ -79,6 +78,8 @@ class UserDetailsFragment : BaseFragment(R.layout.fragment_user_detail) {
         viewLifecycleOwner.observe {
             userDetailsViewModel.userDetailsPreviewFlow.collect(userDetailsPreviewCollector)
         }
-
+        viewLifecycleOwner.observe {
+            initUserRepositoriesPreview(userDetailsViewModel.getUserRepositories())
+        }
     }
 }

@@ -8,10 +8,11 @@
         <entry key="..\:/Development/AndroidStudioProjects/GithubUsersApp/app/src/main/res/drawable/ic_green_star_background.xml" value="0.1965" />
         <entry key="..\:/Development/AndroidStudioProjects/GithubUsersApp/app/src/main/res/drawable/ic_green_star_foreground.xml" value="0.1965" />
         <entry key="..\:/Development/AndroidStudioProjects/GithubUsersApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.282" />
+        <entry key="..\:/Development/AndroidStudioProjects/GithubUsersApp/app/src/main/res/drawable/layout_rounded_bg.xml" value="0.1965" />
         <entry key="..\:/Development/AndroidStudioProjects/GithubUsersApp/app/src/main/res/layout/activity_main.xml" value="0.240625" />
         <entry key="..\:/Development/AndroidStudioProjects/GithubUsersApp/app/src/main/res/layout/custom_toolbar.xml" value="0.2545289855072464" />
         <entry key="..\:/Development/AndroidStudioProjects/GithubUsersApp/app/src/main/res/layout/fragment_add_new_user.xml" value="0.2545289855072464" />
-        <entry key="..\:/Development/AndroidStudioProjects/GithubUsersApp/app/src/main/res/layout/fragment_user_detail.xml" value="0.223731884057971" />
+        <entry key="..\:/Development/AndroidStudioProjects/GithubUsersApp/app/src/main/res/layout/fragment_user_detail.xml" value="0.47994467496542187" />
         <entry key="..\:/Development/AndroidStudioProjects/GithubUsersApp/app/src/main/res/layout/fragment_users.xml" value="0.25" />
         <entry key="..\:/Development/AndroidStudioProjects/GithubUsersApp/app/src/main/res/layout/item_user.xml" value="0.33" />
         <entry key="..\:/Development/AndroidStudioProjects/GithubUsersApp/app/src/main/res/layout/item_user_details.xml" value="0.33" />

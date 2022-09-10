@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/spacing_small"
-    android:background="@color/material_dynamic_neutral_variant90"
+    android:background="@drawable/layout_rounded_bg"
+    android:backgroundTint="@color/material_dynamic_neutral_variant90"
+    android:clipToOutline="true"
     android:padding="@dimen/spacing_small">
 
     <TextView
@@ -33,8 +35,8 @@
         android:id="@+id/createDateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/purple_500"
         android:layout_marginTop="@dimen/spacing_xxsmall"
+        android:textColor="@color/purple_500"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/starLogoImageView"
