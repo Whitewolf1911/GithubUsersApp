@@ -32,4 +32,11 @@ class UsersViewModel @Inject constructor(
         }
     }
 
+    fun sortUsersPreviewFlow() {
+        viewModelScope.launch {
+            usersPreviewUseCase.getUserListItemsSorted().collectLatest { userPreview ->
+                _usersPreviewFlow.value = userPreview
+            }
+        }
+    }
 }

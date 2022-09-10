@@ -10,7 +10,6 @@ import com.whitewolf1911.githubusersapp.users.ui.model.UserListItem
 import com.whitewolf1911.githubusersapp.utils.getOrThrow
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
@@ -52,7 +51,6 @@ class UserDetailsViewModel @Inject constructor(
         var userRepositoriesPreview = UserRepositoriesPreview(emptyList())
         runBlocking {
             userRepositoriesPreview = userDetailsPreviewUseCase.getUserRepositoriesPreview(userUsername)
-
         }
         return userRepositoriesPreview
     }

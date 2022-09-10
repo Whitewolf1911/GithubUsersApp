@@ -1,11 +1,10 @@
 package com.whitewolf1911.githubusersapp.core
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.NavHostFragment
-import com.whitewolf1911.githubusersapp.R
 import com.whitewolf1911.githubusersapp.core.fragment.ToolbarConfiguration
 import com.whitewolf1911.githubusersapp.customviews.CustomToolbar
 import com.whitewolf1911.githubusersapp.databinding.ActivityMainBinding

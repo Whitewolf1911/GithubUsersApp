@@ -3,11 +3,9 @@ package com.whitewolf1911.githubusersapp.addnewuser.ui
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import com.whitewolf1911.githubusersapp.R
 import com.whitewolf1911.githubusersapp.core.fragment.BaseFragment
 import com.whitewolf1911.githubusersapp.core.fragment.FragmentConfiguration
@@ -17,13 +15,15 @@ import com.whitewolf1911.githubusersapp.utils.lifecycle.observe
 import com.whitewolf1911.githubusersapp.utils.viewbinding.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.FlowCollector
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class AddNewUserFragment : BaseFragment(R.layout.fragment_add_new_user) {
 
-    private val toolbarConfiguration: ToolbarConfiguration = ToolbarConfiguration(R.string.new_user)
+    private val toolbarConfiguration: ToolbarConfiguration = ToolbarConfiguration(
+        titleResId = R.string.new_user,
+        startIconResId = R.drawable.ic_arrow_back,
+        startIconClick = ::navBack
+    )
 
     private val binding by viewBinding(FragmentAddNewUserBinding::bind)
 

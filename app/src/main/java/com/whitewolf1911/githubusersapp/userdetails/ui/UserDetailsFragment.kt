@@ -1,12 +1,9 @@
 package com.whitewolf1911.githubusersapp.userdetails.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import com.bumptech.glide.Glide
 import com.whitewolf1911.githubusersapp.R
 import com.whitewolf1911.githubusersapp.core.fragment.BaseFragment
@@ -18,9 +15,7 @@ import com.whitewolf1911.githubusersapp.userdetails.ui.model.UserRepositoriesPre
 import com.whitewolf1911.githubusersapp.utils.lifecycle.observe
 import com.whitewolf1911.githubusersapp.utils.viewbinding.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.FlowCollector
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint

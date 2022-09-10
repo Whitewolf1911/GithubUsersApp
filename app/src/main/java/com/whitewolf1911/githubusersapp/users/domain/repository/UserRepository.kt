@@ -1,7 +1,5 @@
 package com.whitewolf1911.githubusersapp.users.domain.repository
 
-import com.whitewolf1911.githubusersapp.userdetails.data.model.UserDetailsResponse
-import com.whitewolf1911.githubusersapp.userdetails.data.model.UserReposResponse
 import com.whitewolf1911.githubusersapp.userdetails.domain.model.UserDetails
 import com.whitewolf1911.githubusersapp.userdetails.domain.model.UserRepositoryItem
 import com.whitewolf1911.githubusersapp.users.domain.model.UserDTO

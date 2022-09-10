@@ -15,7 +15,6 @@ import com.whitewolf1911.githubusersapp.utils.lifecycle.observe
 import com.whitewolf1911.githubusersapp.utils.viewbinding.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.FlowCollector
-import kotlinx.coroutines.flow.collect
 
 @AndroidEntryPoint
 class UsersFragment : BaseFragment(R.layout.fragment_users) {
@@ -51,10 +50,12 @@ class UsersFragment : BaseFragment(R.layout.fragment_users) {
     }
 
     private fun initUi() {
-
         with(binding) {
             addNewUserButton.setOnClickListener {
                 navToAddNewUserFragment()
+            }
+            sortUsersButton.setOnClickListener {
+                sortUsers()
             }
             usersRecyclerView.adapter = usersAdapter
             usersRecyclerView.addItemDecoration(
@@ -67,6 +68,10 @@ class UsersFragment : BaseFragment(R.layout.fragment_users) {
         viewLifecycleOwner.observe {
             usersViewModel.usersPreviewFlow.collect(usersPreviewCollector)
         }
+    }
+
+    private fun sortUsers() {
+        usersViewModel.sortUsersPreviewFlow()
     }
 
     private fun navToAddNewUserFragment() {
