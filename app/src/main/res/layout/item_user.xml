@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="@dimen/spacing_xsmall"
         android:textColor="@color/black"
-        android:textSize="@dimen/text_size_medium"
+        android:textSize="@dimen/text_size_small"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

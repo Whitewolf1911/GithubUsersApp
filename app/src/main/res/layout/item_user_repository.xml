@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/spacing_small"
     android:background="@drawable/layout_rounded_bg"
-    android:backgroundTint="@color/material_dynamic_neutral_variant90"
+    android:backgroundTint="@color/teal_200"
     android:clipToOutline="true"
     android:padding="@dimen/spacing_small">
 
